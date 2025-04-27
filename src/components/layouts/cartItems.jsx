@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaEye, FaStar } from "react-icons/fa";
 import { Heart } from 'lucide-react';
-import { motion } from "framer-motion";
 
 const ProductCard = ({ product, index }) => {
   const [liked, setLiked] = useState(false);
@@ -11,24 +10,20 @@ const ProductCard = ({ product, index }) => {
   };
 
   return (
-    <div className="bg-white border py-8 px-4 max-w-screen-xl rounded-lg shadow-sm w-full sm:w-60 relative">
+    <div className="bg-white border  py-8 px-4 max-w-screen-xl rounded-lg shadow-sm w-full sm:w-60 relative">
       {/* Sale Badge */}
       <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">-20%</span>
 
      
       <div className="absolute top-2 right-2 space-y-2 text-gray-600">
-        <motion.div
-          whileTap={{ scale: 1.5 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="cursor-pointer"
-          onClick={toggleLike}
-        
-        >
+       
           <Heart size={20} 
           fill = {liked ? "red" : "white"}
-          color={liked ? "red" : "gray"} />
-        </motion.div>
-
+          color={liked ? "red" : "gray"}
+          onClick={toggleLike}
+          />
+          
+   
         <div className="cursor-pointer">
           <FaEye size={18} />
         </div>
@@ -82,6 +77,7 @@ const ProductList = () => {
 
     fetchProducts();
   }, []);
+  
 
   return (
     <>

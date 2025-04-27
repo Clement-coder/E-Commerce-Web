@@ -39,14 +39,14 @@ const FlashSales = () => {
       <div className="flex flex-col md:flex-row items-center gap-8 text-gray-800">
         
         {/* Title */}
-        <h2 className="font-bold text-center text-2xl md:text-4xl lg:text-5xl text-black">
+        <h2 className="font-medium text-center text-sm md:text-xl lg:text-4xl text-black">
           Flash Sales 
         </h2>
 
         {/* Timer */}
         <div className="flex flex-col items-center">
       
-          <div className="flex justify-center gap-16 text-xs md:text-sm font-medium mb-2">
+          <div className="flex justify-center gap-8 text-xs md:text-sm font-medium mb-2">
             <span className="text-black">Days</span>
             <span className="text-black">Hours</span>
             <span className="text-black">Minutes</span>
@@ -54,13 +54,13 @@ const FlashSales = () => {
           </div>
 
           {/* Time Numbers */}
-          <div className="flex justify-center gap-3 md:gap-4 text-2xl md:text-4xl lg:text-6xl font-bold">
+          <div className="flex justify-center gap-3 md:gap-4 text-sm md:text-xl lg:text-4xl font-bold">
             <div>{days}</div>
-            <div>:</div>
+            <div className='text-red-500'>:</div>
             <div>{hours}</div>
-            <div>:</div>
+            <div className='text-red-500'>:</div>
             <div>{minutes}</div>
-            <div>:</div>
+            <div className='text-red-500'>:</div>
             <div>{seconds}</div>
           </div>
         </div>

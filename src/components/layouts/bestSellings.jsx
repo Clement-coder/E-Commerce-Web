@@ -61,13 +61,14 @@ const BestSellings = () => {
                 whileTap={{ scale: 1.5 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="cursor-pointer"
-                onClick={() => toggleLike(product.id)}
-                title="Add to Wishlist ❤️"
+                
               >
                 <Heart
                   size={22}
                   fill={likes[product.id] ? 'red' : 'none'}
                   color={likes[product.id] ? 'red' : 'gray'}
+                                  onClick={() => toggleLike(product.id)}
+
                 />
               </motion.div>
             </div>
@@ -75,13 +76,13 @@ const BestSellings = () => {
             {/* Product image */}
             <img src={product.image} alt={product.title} className="h-40 mx-auto object-contain mt-2" />
 
-            {/* Product details */}
             <div className="mt-4 space-y-2 text-center md:text-left">
               <h3 className="text-sm md:text-base font-semibold line-clamp-2">{product.title}</h3>
 
               {/* Ratings stars */}
               <div className="flex justify-center md:justify-start items-center text-yellow-400 text-xs">
                 {[...Array(5)].map((_, i) => (
+
                   <Star
                     key={i}
                     size={14}
